@@ -61,6 +61,15 @@
 				<a href="#fuwajs" id="fuwajs" style="color: inherit; text-decoration: none;">
 					<h1>Fuwa.js</h1>
 				</a>
+				<br/>
+				<div align="center">
+					<p>
+						<a href="https://discord.gg/FGn4T9eUp5">
+							<img
+							src="https://img.shields.io/discord/788135963528134656?color=7289da&logo=discord&logoColor=white"/>
+						</a>
+					</p>
+				</div>
 				<a href="#quickstart" id="quickstart" style="color: inherit; text-decoration: none;">
 					<h2>Quickstart</h2>
 				</a>
@@ -68,19 +77,18 @@
 				<ul>
 					<li><a href="https://discordjs.guide/preparations/setting-up-a-bot-application.html">Creating a Bot Application</a></li>
 					<li><a href="https://discordjs.guide/preparations/adding-your-bot-to-servers.html#bot-invite-links">Adding your bot to a server</a></li>
-					<li>Source: (<a href="https://discordjs.guide/">https://discordjs.guide/</a>)</li>
 				</ul>
 				<pre><code class="language-bash"><span style="color: #000000">$ npm init -y</span>
 <span style="color: #000000">$ npm i Fuwajs/Fuwa.js</span>
 <span style="color: #000000">$ </span><span style="color: #795E26">echo</span><span style="color: #000000"> &gt; index.js</span>
 </code></pre>
 				<p>A file called index.js should be in your directory, open that in your IDE of choice and type</p>
-				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">Fuwa</span><span style="color: #000000"> = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;fuwa.js&#039;</span><span style="color: #000000">);</span>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">Client</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;fuwa.js&#039;</span><span style="color: #000000">);</span>
 
 <span style="color: #008000">// replace with your bot token</span>
 <span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">login</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;&lt;your bot token&gt;&#039;</span><span style="color: #000000">);</span>
 
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">client</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Fuwa</span><span style="color: #000000">.</span><span style="color: #267F99">Client</span><span style="color: #000000">(</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">client</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Client</span><span style="color: #000000">(</span>
 <span style="color: #000000">    </span><span style="color: #008000">/* Your prefix here */</span>
 <span style="color: #000000">    </span><span style="color: #A31515">&#039;?&#039;</span>
 <span style="color: #000000">);</span>
@@ -94,7 +102,7 @@
 <span style="color: #000000">});</span>
 
 </code></pre>
-				<p>Check the <a href="https://Fuwajs.github.io/Fuwa.js">docs</a> for more in depth examples.</p>
+				<p>Check the <a href="https://Fuwajs.github.io/index.html">docs</a> for more in depth examples.</p>
 				<p>join our <a href="https://discord.gg/FGn4T9eUp5">discord</a> to interact with our community and ask questions!</p>
 			</div>
 		</div>
