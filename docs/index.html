@@ -58,20 +58,26 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#fuwajs" id="fuwajs" style="color: inherit; text-decoration: none;">
-					<h1>Fuwa.js</h1>
-				</a>
-				<br/>
 				<div align="center">
+					<img src="misc/Logo.png">
+					<p>The <b>new</b> way to create <em>progressive</em> Discord bots.</p>
 					<p>
 						<a href="https://discord.gg/FGn4T9eUp5">
-							<img
-							src="https://img.shields.io/discord/788135963528134656?color=7289da&logo=discord&logoColor=white"/>
+							<img src="https://img.shields.io/discord/788135963528134656?color=7289da&logo=discord&logoColor=white"/>
 						</a>
 					</p>
 				</div>
+				<a href="#highlights" id="highlights" style="color: inherit; text-decoration: none;">
+					<h1>Highlights</h1>
+				</a>
+				<ul>
+					<li>Express-like syntax</li>
+					<li>Lightweight (only <strong>two</strong> dependencies)</li>
+					<li>Fast</li>
+					<li>Built-In Command Parser</li>
+				</ul>
 				<a href="#quickstart" id="quickstart" style="color: inherit; text-decoration: none;">
-					<h2>Quickstart</h2>
+					<h1>Quickstart</h1>
 				</a>
 				<p>This assumes you have already setup a discord bot application in Discord. See</p>
 				<ul>
@@ -83,22 +89,21 @@
 <span style="color: #000000">$ </span><span style="color: #795E26">echo</span><span style="color: #000000"> &gt; index.js</span>
 </code></pre>
 				<p>A file called index.js should be in your directory, open that in your IDE of choice and type</p>
-				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">Client</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;fuwa.js&#039;</span><span style="color: #000000">);</span>
+				<pre><code class="language-js"><span style="color: #0000FF">const</span><span style="color: #000000"> { </span><span style="color: #0070C1">Client</span><span style="color: #000000"> } = </span><span style="color: #795E26">require</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;fuwa&#039;</span><span style="color: #000000">);</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">client</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Client</span><span style="color: #000000">(</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&#039;?&#039;</span><span style="color: #000000"> </span><span style="color: #008000">// Your bot prefix here</span>
+<span style="color: #000000">);</span>
 
 <span style="color: #008000">// replace with your bot token</span>
 <span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">login</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;&lt;your bot token&gt;&#039;</span><span style="color: #000000">);</span>
-
-<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">client</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #267F99">Client</span><span style="color: #000000">(</span>
-<span style="color: #000000">    </span><span style="color: #008000">/* Your prefix here */</span>
-<span style="color: #000000">    </span><span style="color: #A31515">&#039;?&#039;</span>
-<span style="color: #000000">);</span>
 
 <span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">on</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;READY&#039;</span><span style="color: #000000">, () </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
 <span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;I am alive!&#039;</span><span style="color: #000000">)</span>
 <span style="color: #000000">);</span>
 
 <span style="color: #001080">client</span><span style="color: #000000">.</span><span style="color: #795E26">command</span><span style="color: #000000">([</span><span style="color: #A31515">&#039;hi&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;hello&#039;</span><span style="color: #000000">], (</span><span style="color: #001080">req</span><span style="color: #000000">, </span><span style="color: #001080">res</span><span style="color: #000000">) </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> { </span>
-<span style="color: #000000">    </span><span style="color: #001080">res</span><span style="color: #000000">.</span><span style="color: #795E26">send</span><span style="color: #000000">(</span><span style="color: #A31515">`Hello there my name is </span><span style="color: #0000FF">${</span><span style="color: #001080">client</span><span style="color: #000000FF">.</span><span style="color: #001080">bot</span><span style="color: #000000FF">.</span><span style="color: #001080">username</span><span style="color: #0000FF">}</span><span style="color: #A31515">!`</span><span style="color: #000000">); </span>
+<span style="color: #000000">    </span><span style="color: #001080">res</span><span style="color: #000000">.</span><span style="color: #795E26">send</span><span style="color: #000000">(</span><span style="color: #A31515">`Hello there, my name is </span><span style="color: #0000FF">${</span><span style="color: #001080">client</span><span style="color: #000000FF">.</span><span style="color: #001080">bot</span><span style="color: #000000FF">.</span><span style="color: #001080">username</span><span style="color: #0000FF">}</span><span style="color: #A31515">!`</span><span style="color: #000000">); </span>
 <span style="color: #000000">});</span>
 
 </code></pre>
@@ -116,10 +121,16 @@
 						<a href="modules/index.html">index</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="modules/lib_channel.html">lib/<wbr>Channel</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="modules/lib_client.html">lib/<wbr>Client</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/lib_colors.html">lib/<wbr>Colors</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/lib_command.html">lib/<wbr>Command</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/lib_embed.html">lib/<wbr>Embed</a>
@@ -128,13 +139,19 @@
 						<a href="modules/lib_emitter.html">lib/<wbr>Emitter</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="modules/lib_guild.html">lib/<wbr>Guild</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="modules/lib_member.html">lib/<wbr>Member</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/lib_reponse.html">lib/<wbr>Reponse</a>
+						<a href="modules/lib_message.html">lib/<wbr>Message</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/lib_request.html">lib/<wbr>Request</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/lib_response.html">lib/<wbr>Response</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/lib_user.html">lib/<wbr>User</a>
@@ -153,13 +170,14 @@
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
 			</ul>
 		</div>
 	</div>
