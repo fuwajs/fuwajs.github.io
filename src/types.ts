@@ -1,4 +1,4 @@
-import type themes from './themes.json';
+import type themes from './data/themes.json';
 
 export type ThemeType = typeof themes;
 
@@ -7,18 +7,32 @@ export interface Link {
     url: string;
 }
 
-export interface Method {
+export interface BaseType {
     name: string;
+    depricated: boolean;
+    desc: string;
+    example?: string;
+}
+export interface Func extends BaseType {
     aliases?: string[];
-    args: { name: string; type: Type; desc: string }[];
+    args: { name: string; type: string | Link; desc: string }[] | null;
     return: string | Link;
 }
 
-export interface ClassMethod {
-    name: string;
-    constructor: Method;
-    props: { name: string; type: Type; desc: string }[];
-    methods: Method[];
+interface ObjectItem extends BaseType {
+    value: Link | string;
+}
+export interface Obj extends BaseType {
+    items: ObjectItem[];
 }
 
-export type Type = Link | { [key: string]: any } | any[];
+export interface ClassMethod extends BaseType {
+    constructor: Func;
+    methods: Func[];
+}
+
+export interface File extends BaseType {
+    exports: { default: MainTypes };
+}
+
+export type MainTypes = ClassMethod | Func | Obj | BaseType;

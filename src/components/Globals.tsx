@@ -11,6 +11,16 @@ const ThemeContainer = createGlobalStyle<{ theme: ThemeType['dark'] }>`
     --main: ${props => props.theme.main};
     --main2: ${props => props.theme.main2};
 }
+/* Svgs */
+svg.sun {
+    circle {
+        fill: 'var(--main)';
+        stroke: 'var(--text)';
+    };
+    .rays {
+        
+    }
+}
 
 *, html, body {
     color: var(--text);

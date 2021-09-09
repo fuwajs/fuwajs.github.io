@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
-import themes from './themes.json';
+import themes from './data/themes.json';
 import { GradiantButton } from './components/Button';
+import { NavItem } from './dom/Navbar';
+import { Sunrise } from './data/Icons';
 import ThemeContainer from './components/Globals';
 
 function Index() {
@@ -12,15 +14,15 @@ function Index() {
     return (
         <>
             <ThemeContainer theme={themes[theme]} />
-            <GradiantButton
+            <NavItem
+                Icon={Sunrise as any}
+                name='Theme'
                 onClick={() => {
                     const newTheme = theme === 'dark' ? 'light' : 'dark';
                     setTheme(newTheme);
                     localStorage.setItem('theme', newTheme);
                 }}
-            >
-                Hi
-            </GradiantButton>
+            />
         </>
     );
 }
