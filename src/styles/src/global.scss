@@ -3,6 +3,8 @@ html,
 body {
     padding: 0;
     margin: 0;
+    color: var(--text);
+    transition: color, background-color 0.3s;
 }
 main {
     height: 100vh;
@@ -11,13 +13,24 @@ main {
     background-color: var(--bg);
 }
 
-li,
-ul {
+/* Svgs */
+svg.sun {
+    circle {
+        fill: var(--main);
+        stroke: var(--text);
+    }
+    .rays {
+    }
+}
+
+ul,
+li {
     list-style: none;
 }
 
 a,
-button {
+button *[button],
+*[type='button'] {
     cursor: pointer;
 }
 
