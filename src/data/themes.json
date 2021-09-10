@@ -1,13 +1,13 @@
 {
     "dark": {
-        "text": "#fff",
+        "text": "#dbdbdb",
         "bg": "#2a2938",
         "accent": "#272630",
         "main": "#05d462",
         "main2": "#00ffc8"
     },
     "light": {
-        "text": "#000",
+        "text": "#242424",
         "bg": "#eeeeee",
         "accent": "#bebebe",
         "main": "#05d462",

@@ -1,4 +1,4 @@
-import type themes from './data/themes.json';
+import type themes from './themes.json';
 
 export type ThemeType = typeof themes;
 
@@ -32,7 +32,7 @@ export interface ClassMethod extends BaseType {
 }
 
 export interface File extends BaseType {
-    exports: { default: MainTypes };
+    exports: { default: MainTypes } | BaseType[];
 }
 
 export type MainTypes = ClassMethod | Func | Obj | BaseType;
