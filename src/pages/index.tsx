@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import themes from '../data/themes.json';
 import '../styles/index.scss';
-import { Sun, Moon } from '../data/Icons';
-
+import { Sun, Moon, Github } from '../data/Icons';
+import { Navbar, NavItem } from '../components/Navbar';
+import Logo from '../images/Logo.svg';
 function changeThemes(themeName: string) {
     const theme = themes[themeName];
     const setProp = (name: string, val: string) =>
@@ -19,17 +20,39 @@ function Index() {
         (localStorage.getItem('theme') || 'dark') as 'dark' | 'light',
     );
     useEffect(() => changeThemes(theme), [theme]);
+    const ThemeIcon = theme === 'dark' ? Sun : Moon;
     return (
         <>
-            <main>
-                <button
-                    onClick={() =>
-                        setTheme(theme === 'dark' ? 'light' : 'dark')
-                    }
+            <header>
+                <Navbar
+                    type='dynamic'
+                    Logo={Logo}
+                    searchBar={{
+                        onSubmit: e => {
+                            e.preventDefault();
+                            console.log('Hi');
+                        },
+                    }}
                 >
-                    Theme
-                </button>
-            </main>
+                    <>
+                        <NavItem
+                            Icon={ThemeIcon}
+                            name='Change theme'
+                            isNav={false}
+                            onClick={() =>
+                                setTheme(theme === 'dark' ? 'light' : 'dark')
+                            }
+                        />
+                        <NavItem
+                            Icon={Github}
+                            name='Github'
+                            link='https://github.com/fuwajs/fuwa.js'
+                            isNav={false}
+                        />
+                    </>
+                </Navbar>
+            </header>
+            <main></main>
         </>
     );
 }

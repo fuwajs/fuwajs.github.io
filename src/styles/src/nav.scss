@@ -1,0 +1,80 @@
+.nav {
+    background-color: var(--main);
+    display: flex;
+    position: absolute;
+    .menu {
+        display: none;
+    }
+    justify-content: space-around;
+    .nav-logo {
+        min-width: 5rem;
+        height: 5rem;
+    }
+    .nav-items {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        span {
+            display: none;
+        }
+    }
+}
+
+.nav-top {
+    top: 0;
+    left: 0;
+    align-items: center;
+    flex-direction: row;
+    min-width: 100vw;
+    height: 5rem;
+}
+
+.nav-bottom {
+    flex-direction: row;
+    min-width: 100vw;
+    height: 5em;
+}
+.nav-dynamic {
+    min-width: 100vw;
+    height: 5em;
+    transition: bottom 1s;
+}
+@media screen and (max-width: 900px) {
+    .nav-dynamic {
+        bottom: 0;
+        left: 0;
+        justify-content: space-evenly;
+        form.searchbar {
+            input {
+                display: none;
+            }
+            button {
+                background-color: inherit;
+                svg {
+                    height: 3rem;
+                    width: 3rem;
+                }
+            }
+        }
+        .nav-items {
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/b2/Hamburger_icon.svg);
+            background-repeat: no-repeat;
+            width: 2rem;
+            height: 2rem;
+            &:hover,
+            .nav-item {
+                display: block;
+            }
+            .nav-item {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .nav-dynamic {
+        bottom: 100;
+        left: 0;
+    }
+}
