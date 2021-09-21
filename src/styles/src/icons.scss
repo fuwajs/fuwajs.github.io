@@ -1,0 +1,17 @@
+.logo {
+    &:hover .shp3 {
+        opacity: 0;
+    }
+    .shp1 {
+        fill: var(--text);
+        filter: invert(100%);
+    }
+    .shp2 {
+        fill: #393e5b;
+    }
+    .shp3 {
+        stroke: #242428;
+        stroke-width: 50;
+        transition: opacity 1s;
+    }
+}

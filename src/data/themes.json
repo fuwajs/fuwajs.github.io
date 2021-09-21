@@ -1,16 +1,16 @@
 {
     "dark": {
         "text": "#dbdbdb",
-        "bg": "#180029",
-        "accent": "#3a015c",
-        "main": "#AC22FC",
-        "main2": "#f5f500"
+        "bg": "#0e0e1b",
+        "accent": "#434389",
+        "main": "#5a5baf",
+        "main2": "#4b4b95"
     },
     "light": {
         "text": "#242424",
         "bg": "#eeeeee",
-        "accent": "#3a015c",
-        "main": "#AC22FC",
-        "main2": "#f5f500"
+        "accent": "#434389",
+        "main": "#5a5baf",
+        "main2": "#4b4b95"
     }
 }
