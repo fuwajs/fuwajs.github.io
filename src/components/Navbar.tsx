@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Searchbar from './Searchbar';
-import { Menu } from '../data/Icons';
+import { Close, Menu } from '../data/Icons';
 import '../styles/src/nav.scss';
 
 export interface NavProps {
@@ -23,6 +23,8 @@ export interface ItemProps {
 }
 
 export function Navbar({ searchBar = false, Logo, children, type }: NavProps) {
+    const [bodyShowing, setBodyShowing] = useState(false);
+    const MenuIcon = bodyShowing ? Close : Menu;
     return (
         <>
             <nav className={`nav nav-${type}`}>
@@ -37,8 +39,18 @@ export function Navbar({ searchBar = false, Logo, children, type }: NavProps) {
                         placeholder='Search docs'
                     />
                 )}
-                <Menu className='menu' />
-                <ul className='nav-items'>{children}</ul>
+                {type === 'dynamic' ? (
+                    <MenuIcon
+                        onClick={() =>
+                            setBodyShowing(bodyShowing ? false : true)
+                        }
+                    />
+                ) : (
+                    <></>
+                )}
+                <ul className={'nav-items' + (bodyShowing ? ' open' : '')}>
+                    {children}
+                </ul>
             </nav>
         </>
     );

@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import themes from '../data/themes.json';
 import '../styles/index.scss';
 import '../styles/src/icons.scss';
-import { Sun, Moon, Github, Logo } from '../data/Icons';
+import { Sun, Moon, Github, Logo, Menu } from '../data/Icons';
 import { Navbar, NavItem } from '../components/Navbar';
+
 function changeThemes(themeName: string) {
     const theme = themes[themeName];
     const setProp = (name: string, val: string) =>
@@ -52,13 +53,7 @@ function Index() {
                     </>
                 </Navbar>
             </header>
-            <main>
-                <Logo
-                    width='100'
-                    height='100'
-                    style={{ alignSelf: 'center' }}
-                />
-            </main>
+            <main></main>
         </>
     );
 }
